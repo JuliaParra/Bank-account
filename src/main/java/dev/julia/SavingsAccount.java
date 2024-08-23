@@ -36,7 +36,16 @@ public class SavingsAccount extends Account {
     @Override
     public void generateMonthlyStatement() {
         if (withdrawalCount > 4) {
-            monthlyFee += (withdrawalCount - 4) * 1000;
+          
+            int extraWithdrawals = withdrawalCount - 4;
+            float extraFees = extraWithdrawals * 1000;
+            
+          
+            if (balance >= extraFees) {
+                monthlyFee += extraFees;
+            } else {
+                monthlyFee += balance; 
+            }
         }
         super.generateMonthlyStatement();
         checkAccountStatus();

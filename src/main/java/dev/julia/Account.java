@@ -1,14 +1,14 @@
 package dev.julia;
 
 public class Account {
-   // Protected attributes
+
    protected float balance;
    protected int depositCount;
    protected int withdrawalCount;
    protected float annualInterestRate;
    protected float monthlyFee;
 
-   // Constructor
+ 
    public Account(float initialBalance, float annualInterestRate) {
        this.balance = initialBalance;
        this.annualInterestRate = annualInterestRate;
@@ -17,7 +17,6 @@ public class Account {
        this.monthlyFee = 0;
    }
 
-   // Getters and Setters
    public float getBalance() {
        return balance;
    }
@@ -50,7 +49,7 @@ public class Account {
        this.monthlyFee = monthlyFee;
    }
 
-   // Main methods
+  
    public void deposit(float amount) {
        balance += amount;
        depositCount++;
